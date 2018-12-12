@@ -1,5 +1,6 @@
 package com.example.corei5.restaurant;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -20,6 +21,9 @@ public class LugarActivity extends AppCompatActivity implements View.OnClickList
             public void onClick(View v) {
                 Toast notificacion = Toast.makeText(LugarActivity.this, "El Fogon",Toast.LENGTH_SHORT);
                 notificacion.show();
+
+                Intent intencion = new Intent(getApplicationContext(), DescripcionLugaActivity.class);
+                startActivity(intencion);
             }
         }));
 
@@ -30,6 +34,9 @@ public class LugarActivity extends AppCompatActivity implements View.OnClickList
             public void onClick(View v) {
                 Toast notificacion = Toast.makeText(LugarActivity.this, "El Pizarron",Toast.LENGTH_SHORT);
                 notificacion.show();
+
+                Intent intencion = new Intent(getApplicationContext(), Descripcion2Activity.class);
+                startActivity(intencion);
             }
         }));
 
@@ -40,6 +47,9 @@ public class LugarActivity extends AppCompatActivity implements View.OnClickList
             public void onClick(View v) {
                 Toast notificacion = Toast.makeText(LugarActivity.this, "Doña Eugenia",Toast.LENGTH_SHORT);
                 notificacion.show();
+
+                Intent intencion = new Intent(getApplicationContext(), Descripcion3Activity.class);
+                startActivity(intencion);
             }
         }));
 
@@ -50,6 +60,9 @@ public class LugarActivity extends AppCompatActivity implements View.OnClickList
             public void onClick(View v) {
                 Toast notificacion = Toast.makeText(LugarActivity.this, "PizzaMania Express",Toast.LENGTH_SHORT);
                 notificacion.show();
+                //mandar de una actividad a otra con las dos lineas de codigo; poner en cada boton deseado
+                Intent intencion = new Intent(getApplicationContext(), Descripcion4Activity.class);
+                startActivity(intencion);
             }
         }));
     }
