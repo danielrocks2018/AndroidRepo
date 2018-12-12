@@ -1,8 +1,13 @@
 package com.example.corei5.restaurant;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.preference.PreferenceActivity;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.view.MenuItem;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -11,11 +16,33 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
-import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.Toast;
+
+import com.example.corei5.restaurant.Adaptadores.MenuAdapters;
+import com.example.corei5.restaurant.items.MenuResItem;
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.JsonHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
+
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+
+import cz.msebera.android.httpclient.Header;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    RecyclerView recyclerMenu;
+    Button btnInsertar, btnTomarFoto;
+    EditText editNombre,editPrecio;
+    ImageView imagen;
+    ArrayList<MenuResItem> listData;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,8 +56,17 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+
             }
         });
+        Intent intentRest = getIntent();
+
+        if(intentRest != null){
+                   String idRestaurant = intentRest.getExtras().getString("idrestaurant");
+        }
+        //loadComponents();
+        sendData();
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -41,6 +77,48 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
     }
+    private void sendData(){
+        AsyncHttpClient client = new AsyncHttpClient();
+        RequestParams params = new RequestParams();
+        params.put("idrestaurant", "");
+        params.put("name", editNombre.getText());
+        params.put("price", editPrecio.getText());
+        client.post("", params,new JsonHttpResponseHandler(){
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response){
+                try{
+                    String msn = response.getString("msn");
+                    String id = response.getString("id");
+                   // UserDATA.ID = id;
+                    if (msn !=null){
+                        loadData();
+                        //Intent camera = Intent(root, CameraForm.class);
+                        //root.startActivity(camera);
+                    } else {
+                        Toast.makeText(MainActivity.this,"ERROR AL ENVIAR LOS DATOS", Toast.LENGTH_LONG).show();
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
+    private void loadData(){
+
+    }
+
+    /*private void loadComponents() {
+        editNombre = findViewById(R.id.editNombre);
+        editPrecio = findViewById(R.id.editPrecio);
+        imagen = findViewById(R.id.imagen);
+
+        recyclerMenu = findViewById(R.id.recyclerMenu);
+        recyclerMenu.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+
+                MenuAdapters adapter = new MenuAdapters(this, listData);
+                recyclerMenu.setAdapter(adapter);
+        );
+    }*/
 
     @Override
     public void onBackPressed() {
