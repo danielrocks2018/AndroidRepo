@@ -41,13 +41,12 @@
         <activity
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps" />
-        <activity android:name=".CameraPhoto">
-
-        </activity>
-        <activity android:name=".ListActivity">
-
-        </activity>
+        <activity android:name=".CameraPhoto"></activity>
+        <activity android:name=".ListActivity"></activity>
         <activity android:name=".MenuActivity">
+
+        </activity>
+        <activity android:name=".LugarActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
