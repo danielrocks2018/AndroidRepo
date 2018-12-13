@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+
 public class LugarActivity extends AppCompatActivity implements View.OnClickListener{
 
     @Override
