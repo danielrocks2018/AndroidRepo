@@ -75,6 +75,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="top|center"
                     android:text="VER MENU"
+                    android:onClick="onclic"
                     android:textAlignment="center"
                     android:textSize="18sp"
                     android:textStyle="bold" />

@@ -27,11 +27,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
         android:ems="10"
         android:hint="Nit"
         android:inputType="textPersonName"
-        android:text="Nit"
+        android:text="nit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -42,12 +41,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="7dp"
         android:layout_marginEnd="8dp"
         android:ems="10"
         android:hint="Propietario"
         android:inputType="textPersonName"
-        android:text="Propietario"
+        android:text="propietario"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -56,17 +55,18 @@
     <EditText
         android:id="@+id/telf"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="51dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="14dp"
         android:ems="10"
         android:hint="Telefono"
         android:inputType="textPersonName"
-        android:text="Telefono"
+        android:text="telefono"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/property" />
+        app:layout_constraintTop_toBottomOf="@+id/property"
+        tools:text="telefono" />
 
     <EditText
         android:id="@+id/street"
@@ -78,7 +78,7 @@
         android:ems="10"
         android:hint="Calle"
         android:inputType="textPersonName"
-        android:text="Calle"
+        android:text="street"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/telf" />
@@ -96,13 +96,59 @@
 
     <Button
         android:id="@+id/next"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="144dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:text="siguiente"
+        app:layout_constraintEnd_toStartOf="@+id/mapView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mapView" />
+
+    <Button
+        android:id="@+id/btn_restaurantes"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:text="siguiente"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mapView" />
+        android:layout_marginBottom="5dp"
+        android:onClick="onclick"
+        android:text="ir a restaurantes"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/mapView"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/next"
+        app:layout_constraintTop_toBottomOf="@+id/mapView"
+        app:layout_constraintVertical_bias="0.45" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp" />
 </android.support.constraint.ConstraintLayout>

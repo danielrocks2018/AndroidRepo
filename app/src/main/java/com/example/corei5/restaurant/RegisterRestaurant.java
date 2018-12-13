@@ -128,4 +128,9 @@ public class RegisterRestaurant extends AppCompatActivity implements OnMapReadyC
         }
         return result;
     }
+
+    public void onclick(View view) {
+        Intent intent = new Intent(this,LugarActivity.class);
+        startActivity(intent);
+    }
 }

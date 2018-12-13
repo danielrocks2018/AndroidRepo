@@ -71,4 +71,11 @@ public class LugarActivity extends AppCompatActivity implements View.OnClickList
     public void onClick(View v){
 
     }
+
+    public void onclic(View view) {
+        Intent intent = new Intent(this,ListActivity.class);
+        startActivity(intent);
+    }
+
+
 }
