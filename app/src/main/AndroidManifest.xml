@@ -44,17 +44,18 @@
         <activity android:name=".CameraPhoto" />
         <activity android:name=".ListActivity" />
         <activity android:name=".MenuActivity" />
-        <activity android:name=".LugarActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".LugarActivity"><intent-filter>
+            <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+
         </activity>
         <activity android:name=".DescripcionLugaActivity" />
         <activity android:name=".Descripcion2Activity" />
         <activity android:name=".Descripcion3Activity" />
-        <activity android:name=".Descripcion4Activity"></activity>
+        <activity android:name=".Descripcion4Activity" />
+        <activity android:name=".login"/>
     </application>
 
 </manifest>
