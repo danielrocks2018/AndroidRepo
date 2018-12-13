@@ -54,7 +54,8 @@
         <activity android:name=".DescripcionLugaActivity" />
         <activity android:name=".Descripcion2Activity" />
         <activity android:name=".Descripcion3Activity" />
-        <activity android:name=".Descripcion4Activity"></activity>
+        <activity android:name=".Descripcion4Activity" />
+        <activity android:name=".LoginActivity"></activity>
     </application>
 
 </manifest>
