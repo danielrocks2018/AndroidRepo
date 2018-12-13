@@ -50,12 +50,20 @@
             android:label="@string/title_activity_maps" />
         <activity android:name=".CameraPhoto" />
         <activity android:name=".ListActivity" />
+<<<<<<< HEAD
         <activity android:name=".MenuActivity">
 
         </activity>
+=======
+        <activity android:name=".MenuActivity" />
+>>>>>>> 07c8e5ce2d665b9093de23cc615e88313815886e
         <activity android:name=".LugarActivity">
 
         </activity>
+        <activity android:name=".DescripcionLugaActivity" />
+        <activity android:name=".Descripcion2Activity" />
+        <activity android:name=".Descripcion3Activity" />
+        <activity android:name=".Descripcion4Activity"></activity>
     </application>
 
 </manifest>
