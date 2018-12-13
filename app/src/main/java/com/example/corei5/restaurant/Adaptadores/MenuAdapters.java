@@ -37,7 +37,7 @@ public class MenuAdapters extends RecyclerView.Adapter<MenuAdapters.MenuViewHold
 
     @Override
     public void onBindViewHolder(@NonNull MenuViewHolder holder, final int position) {
-        // holder.setData(listData.get(position));
+         holder.setData(listData.get(position));
          holder.parentLayout.setOnClickListener(new View.OnClickListener(){
              @Override
              public void onClick(View v){
@@ -54,6 +54,7 @@ public class MenuAdapters extends RecyclerView.Adapter<MenuAdapters.MenuViewHold
     public class MenuViewHolder extends RecyclerView.ViewHolder {
         private TextView name, description, idrestaurant,price, picture, registerdate;
         private ConstraintLayout parentLayout;
+
 
         public MenuViewHolder(View itemView) {
             super(itemView);
